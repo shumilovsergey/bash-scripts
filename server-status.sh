@@ -24,7 +24,8 @@ ram_info=$(free -m | grep "Mem:")
 total_size=$(echo "$ram_info" | awk '{print $2}')
 used_size=$(echo "$ram_info" | awk '{print $3}')
 #tg
-message="name: $computer_name \nip: $ip_address \nHDD: $size / $avail \nCPU: $cpu_info \nRAM: $total_size / $us>
-curl -X POST -H "Content-Type: application/json" -d "{\"chat_id\":\"$chat_id\",\"text\":\"$message\"}" "https:/>
+message="name: $computer_name \nip: $ip_address \nHDD: $size / $avail \nCPU: $cpu_info \nRAM: $total_size / $used_size mB"
+curl -X POST -H "Content-Type: application/json" -d "{\"chat_id\":\"$chat_id\",\"text\":\"$message\"}" "https://api.telegram.org/bot$bot_token/sendMessage"
+
 
 
