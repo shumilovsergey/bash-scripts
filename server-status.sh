@@ -49,6 +49,8 @@ echo "$file_path"
 (crontab -l 2>/dev/null; echo "$cron_time $file_path") | crontab -
 echo "Cron task added: $cron_time $file_name"
 
+#DOWNLOAD_DIR
+cd "../" || exit
 # Clean up
 rm ./server-status.sh
 echo "----------------------------------------------------------------"
