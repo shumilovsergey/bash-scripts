@@ -49,3 +49,8 @@ echo "$file_path"
 (crontab -l 2>/dev/null; echo "$cron_time $file_path") | crontab -
 echo "Cron task added: $cron_time $file_name"
 
+# Clean up
+rm ./server-status.sh
+echo "----------------------------------------------------------------"
+echo "\nInstallation completed!"
+echo "----------------------------------------------------------------"
