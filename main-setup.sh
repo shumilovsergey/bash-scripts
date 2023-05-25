@@ -4,13 +4,6 @@
 sudo apt update -y
 sudo apt upgrade -y
 
-#TIMESHIFT "CLEAN-SERVER"
-sudo apt install timeshift -y
-sudo timeshift --create --comment "CLEAN-SERVER"
-echo "----------------------------------------------------------------"
-echo "\nTimeshift created CLEAN-SERVER backup"
-echo "----------------------------------------------------------------"
-
 #SWAP
 fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
@@ -57,12 +50,6 @@ echo "----------------------------------------------------------------"
 
 #SERVER-STATUS
 wget https://raw.githubusercontent.com/shumilovsergey/bash-scripts/main/server-status.sh && chmod +x server-status.sh && ./server-status.sh
-
-#TIMESHIFT "SETUP-SERVER"
-timeshift --create --comment "SETUP-SERVER"
-echo "----------------------------------------------------------------"
-echo "\nTimeshift created SETUP-SERVER backup"
-echo "----------------------------------------------------------------"
 
 # Clean up
 rm ./main-setup.sh
